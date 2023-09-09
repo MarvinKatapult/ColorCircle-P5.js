@@ -10,17 +10,17 @@ function setup() {
 
 function draw() {
   var r = 200;
-  colorMode(HSB, 360 + STARTPOINT);
+  colorMode(HSB, 360 - abs(STARTPOINT));
 
   stroke(color(a, 270, 270));
   strokeWeight(5);
 
   point(width/2 + cos(a) * r , height/2 + sin(a) * r);
  
-  if (a > (360 + STARTPOINT)) {
+  if (a > (360 - abs(STARTPOINT))) {
     a = STARTPOINT;
     background(255);
   }
-  
+
   a += 3;
 }
